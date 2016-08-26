@@ -1,64 +1,56 @@
 function Pie(size, sauce){
   this.pizzaSize = size;
   this.pizzaSauce = sauce;
-  this.pizzaVegies = [];
+  this.pizzaFiber = [];
   this.pizzaProtein = [];
-}
+  this.totalAmount = 0;
+};
 
 
-function sauce(){
-  var priceVegie = this.pizzaVegies.length * 1;
-}
+Pie.prototype.fiberCost = function(){
+  return this.pizzaFiber.length * 1;
+  console.log(fiberCost);
+};
 
-function protein(){
-  var priceProtein = this.pizzaProtein.length * 2;
-}
+Pie.prototype.proteinCost = function(){
+  return this.pizzaProtein.length * 2;
+  console.log(proteinCost);
+};
 
-function total(){
-  var orderTotal = priceProtein + priceVegie + 5;
-}
-
-
+Pie.prototype.totalCost = function(){
+  this.totalAmount = fiberCost + proteinCost + 5;
+};
 
 
 $(document).ready(function(){
 
-  // submitform begin
+  submitform begin
   $("form.form-group").submit(function(){
-    var pizzaSize = $("Large").val();
-    var pizzaSauce = $("Pesto").val();
+    var pizzaSize = $("").val();
+    var pizzaSauce = $("").val();
 
-    var orderedPizza = new Pie(size, sauce, vegies, Protein)
+    var orderedPizza = new Pie(size, sauce);
+
     $(".addedToppings").each(function(){
       var pizzaVegies = ("Mushroom", "Spinach", "Artichoke").val();
-      var pizzaProtein = ("Sausage", "Pepperoni", "Chicken").val();
-      var toppingChoices = new 
+      var pizzaMeats = ("Sausage", "Pepperoni", "Chicken").val();
+      orderedPizza.pizzaFiber.push(pizzaVegies);
+      orderedPizza.pizzaProtein.push(pizzaMeat);
     })
 
   });
 
-  console.log(orderedPizza.pizzaSize);
-  // Submitform end
-  // add topping option begin
+  Submitform end
+
+  add topping option begin
   $("button").click(function(){
     $("div").append()
   })
-  // add Protein option end
+  add Protein option end
   $("button").click(function(){
     $("div").append()
   })
-  // add Protein option end
-
-
-
-
-
-
-
-
-
-
-
+  add Protein option end
 
 
 
