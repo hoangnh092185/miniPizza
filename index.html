@@ -9,23 +9,66 @@
   </head>
   <body>
     <div class="form-group">
-      <form class="form-control" action="index.html" method="post">
+      <form class="display-option" action="index.html" method="post">
         <h3>Welcome to miniPizza</h3>
         <h4>Built your own pizza place.</h4>
-        <div class="">
-          <label for="">Size of the pie</label>
-          <select class="Pie-size" name="">
-            <option>Large: 18inch</option>
-            <option>Medium: 16inch</option>
-            <option>Small: 10inch</option>
+        <div class="pie-size">
+          <label class="pie-size" for="">Size of the pie</label>
+          <select class="pie-size" name="">
+            <option>Family: 20inch</option>
+            <option>Large: 16inch</option>
+            <option>Medium: 10inch</option>
+            <option>Small: 6inch</option>
           </select>
         </div>
+        <div class="pie-sauce">
+          <label class="pie-sauce" for="">Select Sauce</label>
+          <select class="pie-sauce" name="">
+            <option>Marrinara</option>
+            <option>Pesto</option>
+            <option>BBQ</option>
+          </select>
+        </div>
+        <div class="pie-vegies">
+          <label class="pie-vegies" for="">Select topping: $1/each</label>
+          <select class="pie-vegies" name="">
+            <option>Pineapple</option>
+            <option>Mushrooms</option>
+            <option>Spinach</option>
+            <option>Onions</option>
+            <option>Sun Dried Tomatoes</option>
+            <option>Artichoke Hearts</option>
+          </select>
+          <button type="click" name="button">Add addtional Vegies</button>
+        </div>
+        <div class="pie-meat">
+          <label class="pie-meat" for="">Select topping: $1/each</label>
+          <select class="pie-meat" name="">
+            <option>Pepperoni</option>
+            <option>Salami</option>
+            <option>BBQ Chicken</option>
+            <option>Italian Sausage</option>
+            <option>Canadian Style Bacon</option>
+          </select>
+          <button type="click" name="button">Add aditional Meat</button>
+        </div>
+        <div class="pie-order">
+          <label for="">Place Order</label>
+          <button class="pie-order" type="submit" name="button">Submit</button>
+        </div>
+      </form>
+      <form class="display-order" action="index.html" method="post">
+        <div class="display-order list">
+          Display Ordered List
+        </div>
+        <div class="display-order totalcost">
+          Display Ordered Totalprice
+        </div>
+        <div class="display-order checkoutButtons">
+          <button class="btn btn-warning" type="click" name="button">Reset Order</button>
+          <button class="btn btn-success" type="click" name="button">Proceed Checkout</button>
 
-
-
-
-
-
+        </div>
       </form>
     </div>
   </body>

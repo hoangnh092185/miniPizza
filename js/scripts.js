@@ -12,13 +12,26 @@ Pie.prototype.fiberCost = function(){
   console.log(fiberCost);
 };
 
+Pie.prototype.sizeCost = function(){
+  var pizzaCost = 0;
+  if (this.pizzaSize === "Family"){
+    pizzaCost = 20;
+  }if (this.pizzaSize === "Large"){
+    pizzaCost = 16;
+  }if (this.pizzaSize === "Medium"){
+    pizzaCost = 10;
+  }if (this.pizzaSize === "Small"){
+    pizzaCost = 6;
+  }
+};
+
 Pie.prototype.proteinCost = function(){
   return this.pizzaProtein.length * 2;
   console.log(proteinCost);
 };
 
 Pie.prototype.totalCost = function(){
-  this.totalAmount = fiberCost + proteinCost + 5;
+  this.totalAmount = fiberCost + proteinCost + sizeCost;
 };
 
 
@@ -43,12 +56,12 @@ $(document).ready(function(){
   Submitform end
 
   add topping option begin
-  $("button").click(function(){
+  $("button.pie-veggies").click(function(){
     $("div").append()
   })
   add Protein option end
-  $("button").click(function(){
-    $("div").append()
+  $("button.pie-meat").click(function(){
+    $("div.pie-meat").append()
   })
   add Protein option end
 
