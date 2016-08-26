@@ -4,6 +4,7 @@ function Pie(size, sauce){
   this.pizzaFiber = [];
   this.pizzaProtein = [];
   this.totalAmount = 0;
+  console.log(this.pizzaSize);
 };
 
 
@@ -36,8 +37,8 @@ Pie.prototype.totalCost = function(){
 
 $(document).ready(function(){
   // add Fiber option begin
-  $("#pie-veggies").click(function(){
-    $("#new-pie-vegies").append(<div id="new-pie-vegies">
+  $("butt.new-pie-vegies original").click(function(){
+    $("#pie-vegies").append('<div id="new-pie-vegies">'+
                               '<label class="new-pie-vegies clone" for="">Select topping: $1/each</label>'+
                               '<select class="new-pie-vegies clone" name="">'+
                                 '<option>Pineapple</option>'+
@@ -51,8 +52,8 @@ $(document).ready(function(){
   })
     // add Fiber Option end
   // add Protein option begin
-  $("div.pie-meat").click(function(){
-    $("div.pie-meat").append('<label class="pie-meat" for="">Select topping: $1/each</label>'+
+  $("#pie-meat").click(function(){
+    $("div.new-pie-meat").append('<label class="pie-meat" for="">Select topping: $1/each</label>'+
                               '<select class="pie-meat" name="">'+
                               '<option>Pepperoni</option>'+
                               '<option>Salami</option>'+
