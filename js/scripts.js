@@ -22,11 +22,14 @@ Pie.prototype.sizeCost = function(){
 };
 
 var orderedList = function(){
-    foreach(Pie) {
-    $("#toppingList").append("<li>"+Pie()+"</li>");
+    $("#toppingList").append("<li>"+"Your toppings is: "+ orderedPizza.pizzaSauce+"</li>");
   // };
 };
 
+var orderedPrice = function(){
+    $("#totalPizzaCost").append("<li>"+"Your total is :$" + orderedPizza.sizeCost()+"</li>");
+  // };
+};
 // Pie.prototype.fiberCost = function(){
 //   return 1;
 // };
@@ -92,9 +95,10 @@ $(document).ready(function(){
     var pieMeats = $("select.new-pie-meat").val();
 
     var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
-    console.log(orderedPizza)
+
+    console.log(orderedPizza.sizeCost());
     orderedList ();
-    // orderedPrice ();
+    orderedPrice ();
 
     // var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
 
