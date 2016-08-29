@@ -22,7 +22,9 @@ Pie.prototype.sizeCost = function(){
 };
 
 var orderedList = function(){
-    $("#toppingList").append("<li>"+"Your toppings is: "+ orderedPizza.pizzaSauce+"</li>");
+  alert("begin");
+    var holder = orderedPizza.pizzaSauce;
+    $("#toppingList").append("<li>"+"Your toppings is: "+ holder +"</li>");
   // };
 };
 
@@ -96,8 +98,7 @@ $(document).ready(function(){
 
     var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
 
-    console.log(orderedPizza.sizeCost());
-    orderedList ();
+    orderedList (orderedPizza.pizzaSauce);
     orderedPrice ();
 
     // var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
