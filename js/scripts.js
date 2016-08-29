@@ -4,7 +4,10 @@ function Pie(size, sauce, fiber, protein){
   this.pizzaFiber = [];
   this.pizzaProtein = [];
   this.totalAmount = 0;
+<<<<<<< 27adecf96d58eaf4bec69b7264b66fd8c7ac08cf
   console.log(this.pizzaSize, this.pizzaSauce, this.pizzaFiber, this.pizzaProtein)
+=======
+>>>>>>> initial commit to branch.
 };
 
 Pie.prototype.sizeCost = function(){
@@ -35,6 +38,7 @@ Pie.prototype.totalCost = function(){
 
 $(document).ready(function(){
   // add Fiber option begin
+<<<<<<< 27adecf96d58eaf4bec69b7264b66fd8c7ac08cf
   // $("butt.new-pie-vegies original").click(function(){
   //   $("#pie-vegies").append('<div id="new-pie-vegies">'+
   //                             '<label class="new-pie-vegies clone" for="">Select topping: $1/each</label>'+
@@ -48,6 +52,23 @@ $(document).ready(function(){
   //                             '</select>'+
   //                             '</div>')
   // })
+=======
+  $("#addVegiesbtn").click(function(){
+    $("#pie-vegies").append(
+
+      '<div id="new-pie-vegies">'+
+                              '<label class="new-pie-vegies clone" for="">Select topping: $1/each</label>'+
+                              '<select class="new-pie-vegies clone" name="">'+
+                                '<option>Pineapple</option>'+
+                                '<option>Mushrooms</option>'+
+                                '<option>Spinach</option>'+
+                                '<option>Onions</option>'+
+                                '<option>Sun Dried Tomatoes</option>'+
+                                '<option>Artichoke Hearts</option>'+
+                              '</select>'+
+                              '</div>')
+  });
+>>>>>>> initial commit to branch.
     // add Fiber Option end
   // add Protein option begin
   // $("#pie-meat").click(function(){
