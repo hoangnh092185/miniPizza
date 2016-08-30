@@ -1,15 +1,11 @@
-function Pie(size, sauce, fiber, protein){
+function Pizza(size, sauce, vegies, protein){
   this.pizzaSize = size;
   this.pizzaSauce = sauce;
-  this.pizzaFiber = fiber;
+  this.pizzaVegies = vegies;
   this.pizzaProtein = protein;
-  this.totalAmount = 0;
-
-
-
 };
 
-Pie.prototype.sizeCost = function(){
+Pizza.prototype.sizeCost = function(){
   if (this.pizzaSize === "Family"){
     return 20;
   }else if (this.pizzaSize === "Large"){
@@ -21,72 +17,25 @@ Pie.prototype.sizeCost = function(){
   }
 };
 
-var orderedList = function(){
-  alert("begin");
-    var holder = orderedPizza.pizzaSauce;
-    $("#toppingList").append("<li>"+"Your toppings is: "+ holder +"</li>");
-  // };
+var orderedList = function(toppList){
+    $("#toppingList").append("<li>"+"Your toppings is: "+ toppList +"</li>");
 };
 
-var orderedPrice = function(){
-    $("#totalPizzaCost").append("<li>"+"Your total is :$" + orderedPizza.sizeCost()+"</li>");
-  // };
+var orderedPrice = function(cost){
+    $("#totalPizzaCost").append("<li>"+"Your total is :$" + cost +"</li>");
 };
-// Pie.prototype.fiberCost = function(){
-//   return 1;
-// };
-//
-// Pie.prototype.proteinCost = function(){
-//   return 2;
-// };
+
+var toppingProteins= [];
+$('input[name="toppingProteins"]:checked').each(function() {
+   toppingProteins.push(this.value);
+});console.log(toppingProteins);
+
+var toppingVegies= [];
+$('input[name="toppingVegies"]:checked').each(function() {
+   toppingProteins.push(this.value);
+});console.log(toppingVegies);
 
 $(document).ready(function(){
-  // add Fiber option begin
-
-  // $("butt.new-pie-vegies original").click(function(){
-  //   $("#pie-vegies").append('<div id="new-pie-vegies">'+
-  //                             '<label class="new-pie-vegies clone" for="">Select topping: $1/each</label>'+
-  //                             '<select class="new-pie-vegies clone" name="">'+
-  //                               '<option>Pineapple</option>'+
-  //                               '<option>Mushrooms</option>'+
-  //                               '<option>Spinach</option>'+
-  //                               '<option>Onions</option>'+
-  //                               '<option>Sun Dried Tomatoes</option>'+
-  //                               '<option>Artichoke Hearts</option>'+
-  //                             '</select>'+
-  //                             '</div>')
-  // })
-  // $("#addVegiesbtn").click(function(){
-  //   $("#pie-vegies").append(
-  //
-  //     '<div id="new-pie-vegies">'+
-  //                             '<label class="new-pie-vegies clone" for="">Select topping: $1/each</label>'+
-  //                             '<select class="new-pie-vegies clone" name="">'+
-  //                               '<option>Pineapple</option>'+
-  //                               '<option>Mushrooms</option>'+
-  //                               '<option>Spinach</option>'+
-  //                               '<option>Onions</option>'+
-  //                               '<option>Sun Dried Tomatoes</option>'+
-  //                               '<option>Artichoke Hearts</option>'+
-  //                             '</select>'+
-  //                             '</div>')
-  // });
-    // add Fiber Option end
-  // add Protein option begin
-  // $("#pie-meat").click(function(){
-  //   $("div.new-pie-meat").append('<label class="pie-meat" for="">Select topping: $1/each</label>'+
-  //                             '<select class="pie-meat" name="">'+
-  //                             '<option>Pepperoni</option>'+
-  //                             '<option>Salami</option>'+
-  //                             '<option>BBQ Chicken</option>'+
-  //                             '<option>Italian Sausage</option>'+
-  //                             '<option>Canadian Style Bacon</option>'+
-  //                           '</select>')
-  // });
-  // add Protein option end
-
-  // submitform begin
-
 
   $("form.display-option").submit(function(event){
     event.preventDefault();
@@ -96,21 +45,11 @@ $(document).ready(function(){
     var pieVegies = $("select.new-pie-vegies").val();
     var pieMeats = $("select.new-pie-meat").val();
 
-    var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
+    var orderedPizza = new Pizza(pieSize, pieSauce, pieVegies, pieMeats);
 
     orderedList (orderedPizza.pizzaSauce);
-    orderedPrice ();
+    orderedPrice (orderedPizza.sizeCost());
 
-    // var orderedPizza = new Pie(pieSize, pieSauce, pieVegies, pieMeats);
-
-    // $("div.addedToppings").each(function(){
-    //   var pieVegies = $("select.new-pie-vegies").val();
-    //   var pieMeats = $("select.new-pie-meat").val();
-    //   orderedPizza.pizzaFiber.push(pizzaVegies);
-    //   orderedPizza.pizzaProtein.push(pizzaMeat);
-
-    // })
   });
-  // Submitform end
+
 });
-// document end
