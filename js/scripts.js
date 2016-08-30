@@ -1,8 +1,7 @@
-function Pizza(size, sauce, vegies, protein){
+function Pizza(size, sauce){
   this.pizzaSize = size;
   this.pizzaSauce = sauce;
-  this.pizzaVegies = vegies;
-  this.pizzaProtein = protein;
+
 };
 
 Pizza.prototype.sizeCost = function(){
@@ -17,8 +16,8 @@ Pizza.prototype.sizeCost = function(){
   }
 };
 
-var orderedList = function(toppList){
-    $("#toppingList").append("<li>"+"Your toppings is: "+ toppList +"</li>");
+var orderedList = function(holder){
+  $("#toppingList").append("<li>"+"Your toppings is: "+ holder +"</li>");
 };
 
 var orderedPrice = function(cost){
@@ -28,24 +27,26 @@ var orderedPrice = function(cost){
 var toppingProteins= [];
 $('input[name="toppingProteins"]:checked').each(function() {
    toppingProteins.push(this.value);
-});console.log(toppingProteins);
+   console.log(toppingProteins);
+});
 
 var toppingVegies= [];
 $('input[name="toppingVegies"]:checked').each(function() {
    toppingProteins.push(this.value);
-});console.log(toppingVegies);
+   console.log(toppingVegies);
+});
 
 $(document).ready(function(){
 
   $("form.display-option").submit(function(event){
     event.preventDefault();
 
-    var pieSize = $("select.pie-size").val();
-    var pieSauce = $("select.pie-sauce").val();
-    var pieVegies = $("select.new-pie-vegies").val();
-    var pieMeats = $("select.new-pie-meat").val();
+    var pizzaSize = $("select.pie-size").val();
+    var pizzaSauce = $("select.pie-sauce").val();
+    // var pieVegies = $("select.new-pie-vegies").val();
+    // var pieMeats = $("select.new-pie-meat").val();
 
-    var orderedPizza = new Pizza(pieSize, pieSauce, pieVegies, pieMeats);
+    var orderedPizza = new Pizza(pizzaSize, pizzaSauce);
 
     orderedList (orderedPizza.pizzaSauce);
     orderedPrice (orderedPizza.sizeCost());
