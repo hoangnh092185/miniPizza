@@ -25,16 +25,22 @@ var orderedPrice = function(cost){
 };
 
 var toppingProteins= [];
-$('input[name="toppingProteins"]:checked').each(function() {
-   toppingProteins.push(this.value);
-   console.log(toppingProteins);
+$('input[name="proteins"]:checked').each(function() {
+   toppingProteins.push("Proteins1", "Proteins2", "Proteins3");
+   alert("proteins")
 });
 
+// var matches = [];
+// $(".className:checked").each(function() {
+//     matches.push(this.value);
+// });
+
 var toppingVegies= [];
-$('input[name="toppingVegies"]:checked').each(function() {
-   toppingProteins.push(this.value);
-   console.log(toppingVegies);
+$('input[name="vegies"]:checked').each(function() {
+   toppingVegies.push("Vegies1", "Vegies2", "Vegies3");
+   alert("vegies")
 });
+
 
 $(document).ready(function(){
 
