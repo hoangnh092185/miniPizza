@@ -25,8 +25,13 @@ Pizza.prototype.arrayProteinCost = function(protCost) {
   return protCost = (this.topProteins.length)*2;
 }
 
-var orderedList = function(list){
-  $("#toppingList").append("<li>"+"Your toppings is: "+ list +"</li>");
+var orderedList = function(obj){
+  for (var prop in obj) {
+  if( obj.hasOwnProperty( prop ) ) {
+    $("#toppingList").append(prop + " = " + obj[prop] +"<br>");
+    }
+  }
+  // $("#toppingList").append("<li>"+"Your toppings is: "+ list +"</li>");
 };
 var orderedPrice = function(cost){
     $("#totalPizzaCost").append("<li>"+"Your total is :$" + cost +"</li>");
@@ -52,7 +57,8 @@ $(document).ready(function(){
 
     var orderedPizza = new Pizza(pizzaSize, pizzaSauce, pizzaVeggies, pizzaProteins);
 
-    orderedList (orderedPizza.pizzaSize+orderedPizza.pizzaSauce+orderedPizza.topVeggies+orderedPizza.topProteins);
+    orderedList(orderedPizza);
+    // orderedList (orderedPizza.pizzaSize+orderedPizza.pizzaSauce+orderedPizza.topVeggies+orderedPizza.topProteins);
 
     orderedPrice (orderedPizza.sizeCost()+orderedPizza.arrayVeggieCost()+orderedPizza.arrayProteinCost());
   });
