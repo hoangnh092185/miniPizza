@@ -8,16 +8,12 @@ function Pizza(size, sauce, veggies, proteins){
 Pizza.prototype.sizeCost = function(cost2){
     var cost2 = 0;
   if (this.pizzaSize === "Family"){
-
     return cost2 += 20; ;
   }else if (this.pizzaSize === "Large"){
-
     return cost2 += 16; ;
   }else if (this.pizzaSize === "Medium"){
-
     return cost2 += 10; ;
   }else {
-    
     return cost2 += 6;
   }
 };
