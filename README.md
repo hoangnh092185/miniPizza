@@ -10,12 +10,11 @@ Uses html, Javascript, jquery, and bootstrap to create user interface between th
 
 ## Specification
 
-* User choose one of selections and it is push to a construct.
-* user choose one from a multiple selections and it pushes  each of the selected value to a construct.
-* A object in a construct is pull to a prototype function to calculate total order cost.
-* Multiple objects is used to calculates individual cost for each toppings.
-* The sum of all cost is append to the webpage to display total cost.
-* the list of toppings is append to the webpage to display selections.
+* User can choose toppings and size of the pizza.
+* Create a object constructor from the selected toppings and pizza sizes.
+* creates a prototype methods for the cost of the pizza that are dependent on user selections.
+* Display the selected choices to the front end.
+* Display the calculated pizza cost to the front end.
 
 ## Setup/Installation Requirements
 
