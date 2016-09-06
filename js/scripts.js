@@ -18,35 +18,41 @@ Pizza.prototype.sizeCost = function(cost2){
   }
 };
 
-Pizza.prototype.arrayVeggieCost = function(veggCost) {
+Pizza.prototype.arrayVeggieCost = function() {
   return veggCost = (this.topVeggies.length)*0.5;
 }
-Pizza.prototype.arrayProteinCost = function(protCost) {
+Pizza.prototype.arrayProteinCost = function() {
   return protCost = (this.topProteins.length)*2;
 }
 
 var orderedList = function(obj){
   for (var prop in obj) {
-  if( obj.hasOwnProperty( prop ) ) {
+  if(obj.hasOwnProperty(prop)) {
     $("#toppingList").append(prop + " = " + obj[prop] +"<br>");
     }
   }
-  // $("#toppingList").append("<li>"+"Your toppings is: "+ list +"</li>");
 };
 var orderedPrice = function(cost){
     $("#totalPizzaCost").append("<li>"+"Your total is :$" + cost +"</li>");
 };
 
+function clear() {
+$("#toppingList").empty();
+$("#totalPizzaCost").empty();
+}
+
 $(document).ready(function(){
 
   $("form.display-option").submit(function(event){
     event.preventDefault();
+  clear();
+
 
     var pizzaSize = $("select.pie-size").val();
     var pizzaSauce = $("select.pie-sauce").val();
 
     var pizzaVeggies = [];
-    $('input[name="vegies"]:checked').each(function() {
+    $('input[name="veggies"]:checked').each(function() {
         pizzaVeggies.push(this.value);
       });
 
@@ -58,9 +64,7 @@ $(document).ready(function(){
     var orderedPizza = new Pizza(pizzaSize, pizzaSauce, pizzaVeggies, pizzaProteins);
 
     orderedList(orderedPizza);
-    // orderedList (orderedPizza.pizzaSize+orderedPizza.pizzaSauce+orderedPizza.topVeggies+orderedPizza.topProteins);
 
     orderedPrice (orderedPizza.sizeCost()+orderedPizza.arrayVeggieCost()+orderedPizza.arrayProteinCost());
   });
-
 });
